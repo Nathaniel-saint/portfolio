@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me | NAM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+    <style>
+        .system-status {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid var(--accent);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #clock {
+            color: var(--accent);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">NAM.dev</div>
+        <div><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a></div>
+    </nav>
+
+    <div class="container">
+        <h2>About Me</h2>
+        <p>Sophomore BSc. Business IT student at Palm University College.</p>
+        
+        <h3>Certifications & Training</h3>
+        <ul>
+            <li>
+                <a href="https://www.freecodecamp.org/certification/fcc-85a7d82b-0e34-41f9-ae74-04f14ce588f9/foundational-c-sharp-with-microsoft" target="_blank" style="color: var(--accent); text-decoration: none;">
+                    Microsoft Foundational C# Certification (Verified)
+                </a>
+            </li>
+            <li>CyberRookie 7.0 - Grow with Educ8africa</li>
+            <li style="color: #94a3b8;">Cisco Introduction to Cybersecurity (In Progress)</li>
+        </ul>
+
+        <h3>Core Technical Skills</h3>
+        <p><strong>Systems:</strong> Networking (IPv4/VLSM), Version Control (GitHub), and Security Frameworks (SDL).</p>
+        <p><strong>Languages:</strong> C# (.NET), Asynchronous JavaScript, HTML5/CSS3.</p>
+
+        <!-- System Status Box -->
+        <div class="system-status">
+            <p>> System Time: <span id="clock">00:00:00</span></p>
+            <p>> Status: <span style="color: #4ade80;">Active / Monitoring SDL Pipeline</span></p>
+        </div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            document.getElementById('clock').textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
