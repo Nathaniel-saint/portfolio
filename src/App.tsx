@@ -6,6 +6,8 @@ import { Taskbar } from "./components/Taskbar";
 import { TopBar } from "./components/TopBar";
 import { DesktopIcon } from "./components/FolderIcon";
 import { TerminalApp } from "./components/Terminal";
+import { TraditionalView } from "./components/TraditionalView";
+import { ViewChooser, type PortfolioView } from "./components/ViewChooser";
 import {
   AboutApp,
   ExperienceApp,
@@ -26,7 +28,6 @@ import type { AppId } from "./data";
 import { PROFILE } from "./data";
 import {
   X,
-  Sparkles,
   ArrowRight,
   LayoutGrid,
   Search,
@@ -228,6 +229,11 @@ export default function App() {
     x: number;
     y: number;
   } | null>(null);
+  const [viewMode, setViewMode] = useState<PortfolioView | null>(() => {
+    if (typeof window === "undefined") return null;
+    const stored = window.localStorage.getItem("portfolio-view");
+    return stored === "desktop" || stored === "traditional" ? stored : null;
+  });
 
   const hasOpenWindows = wm.windows.some((w) => !w.minimized);
 
@@ -318,6 +324,15 @@ export default function App() {
       : true,
   );
 
+  const selectView = (view: PortfolioView) => {
+    window.localStorage.setItem("portfolio-view", view);
+    setViewMode(view);
+  };
+
+  if (viewMode === null) return <ViewChooser onChoose={selectView} />;
+  if (viewMode === "traditional")
+    return <TraditionalView onSwitchView={selectView} />;
+
   return (
     <div
       className="desktop-grid relative h-full w-full overflow-hidden transition-theme"
@@ -325,7 +340,12 @@ export default function App() {
       onContextMenu={handleContextMenu}
     >
       {/* Status / Top bar */}
-      <TopBar onOpen={open} onShowApps={openAppsOverview} mobile={isMobile} />
+      <TopBar
+        onOpen={open}
+        onShowApps={openAppsOverview}
+        onSwitchView={() => selectView("traditional")}
+        mobile={isMobile}
+      />
 
       {/* ============ MOBILE: Android home screen ============ */}
       {isMobile && !hasOpenWindows && (
@@ -562,7 +582,6 @@ export default function App() {
                 className="flex items-center gap-2 text-[14px] font-semibold"
                 style={{ color: "var(--text)" }}
               >
-                <Sparkles size={15} style={{ color: "var(--accent)" }} />
                 Welcome
               </div>
               <button

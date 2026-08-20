@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
-import { Wifi, BatteryFull, Volume2 } from "lucide-react";
+import { Wifi, BatteryFull, Volume2, PanelsTopLeft } from "lucide-react";
 import { PROFILE } from "../data";
 
 interface Props {
   onOpen: (id: import("../data").AppId, title: string) => void;
   onShowApps: () => void;
+  onSwitchView: () => void;
   mobile?: boolean;
 }
 
-const MENU_ITEMS: { label: string; id: import("../data").AppId; shortcut?: string }[] = [
+const MENU_ITEMS: {
+  label: string;
+  id: import("../data").AppId;
+  shortcut?: string;
+}[] = [
   { label: "About Nathaniel", id: "about", shortcut: "Ctrl+1" },
   { label: "Professional Experience", id: "experience", shortcut: "Ctrl+2" },
   { label: "Engineering Projects", id: "projects", shortcut: "Ctrl+3" },
@@ -23,7 +28,12 @@ const MENU_ITEMS: { label: string; id: import("../data").AppId; shortcut?: strin
   { label: "Contact", id: "contact" },
 ];
 
-export function TopBar({ onOpen, onShowApps, mobile = false }: Props) {
+export function TopBar({
+  onOpen,
+  onShowApps,
+  onSwitchView,
+  mobile = false,
+}: Props) {
   const [time, setTime] = useState(new Date());
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -49,7 +59,10 @@ export function TopBar({ onOpen, onShowApps, mobile = false }: Props) {
         >
           {time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
         </span>
-        <div className="flex items-center gap-3" style={{ color: "var(--text-dim)" }}>
+        <div
+          className="flex items-center gap-3"
+          style={{ color: "var(--text-dim)" }}
+        >
           <Volume2 size={14} />
           <Wifi size={14} />
           <BatteryFull size={16} style={{ color: "var(--green)" }} />
@@ -103,14 +116,21 @@ export function TopBar({ onOpen, onShowApps, mobile = false }: Props) {
           }}
           className="rounded px-2.5 py-0.5 text-[12.5px] transition-theme"
           style={{ color: "var(--text)" }}
-          onMouseEnter={(e) => (e.currentTarget.style.background = "var(--hover)")}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.background = "var(--hover)")
+          }
           onMouseLeave={(e) => (e.currentTarget.style.background = "")}
           title="Show Applications"
         >
           Applications
         </button>
-        <span className="mx-1" style={{ color: "var(--text-faint)" }}>·</span>
-        <span className="font-mono text-[11.5px]" style={{ color: "var(--text-dim)" }}>
+        <span className="mx-1" style={{ color: "var(--text-faint)" }}>
+          ·
+        </span>
+        <span
+          className="font-mono text-[11.5px]"
+          style={{ color: "var(--text-dim)" }}
+        >
           nathaniel@portfolio:~
         </span>
       </div>
@@ -123,10 +143,26 @@ export function TopBar({ onOpen, onShowApps, mobile = false }: Props) {
           className="inline-block h-1.5 w-1.5 rounded-full pulse-dot"
           style={{ background: "var(--green)" }}
         />
-        <span>{PROFILE.location} · {PROFILE.handle}</span>
+        <span>
+          {PROFILE.location} · {PROFILE.handle}
+        </span>
       </div>
 
-      <div className="flex items-center gap-3" style={{ color: "var(--text-dim)" }}>
+      <div
+        className="flex items-center gap-3"
+        style={{ color: "var(--text-dim)" }}
+      >
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onSwitchView();
+          }}
+          className="hidden items-center gap-1.5 rounded px-2 py-0.5 text-[11px] transition-theme md:flex"
+          style={{ color: "var(--text-dim)" }}
+          title="Switch to traditional website view"
+        >
+          <PanelsTopLeft size={12} /> Website view
+        </button>
         <Volume2 size={13} />
         <Wifi size={13} />
         <BatteryFull size={14} style={{ color: "var(--green)" }} />
@@ -156,12 +192,17 @@ export function TopBar({ onOpen, onShowApps, mobile = false }: Props) {
               }}
               className="flex w-full items-center justify-between px-3 py-1.5 text-left text-[12.5px] transition-theme"
               style={{ color: "var(--text)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--hover)")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "var(--hover)")
+              }
               onMouseLeave={(e) => (e.currentTarget.style.background = "")}
             >
               <span>{m.label}</span>
               {m.shortcut && (
-                <span className="font-mono text-[10.5px]" style={{ color: "var(--text-faint)" }}>
+                <span
+                  className="font-mono text-[10.5px]"
+                  style={{ color: "var(--text-faint)" }}
+                >
                   {m.shortcut}
                 </span>
               )}
