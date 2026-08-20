@@ -22,12 +22,23 @@ import {
   Layers,
   Wrench,
   BookOpen,
-  Sparkles,
   Target,
 } from "lucide-react";
 
-const Github = ({ size = 14, className = "" }: { size?: number; className?: string }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+const Github = ({
+  size = 14,
+  className = "",
+}: {
+  size?: number;
+  className?: string;
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+  >
     <path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.6 18.4.5 12 .5z" />
   </svg>
 );
@@ -45,7 +56,8 @@ const groupIcons: Record<string, React.ReactNode> = {
 
 const cardCls = "rounded-lg border t-border t-bg-1 p-4";
 const cardXlCls = "rounded-xl border t-border t-bg-1 p-5";
-const sectionLabelCls = "font-mono text-[11px] uppercase tracking-wider t-accent";
+const sectionLabelCls =
+  "font-mono text-[11px] uppercase tracking-wider t-accent";
 
 // =================== ABOUT ===================
 export function AboutApp() {
@@ -54,13 +66,18 @@ export function AboutApp() {
       <div className="flex items-start gap-5">
         <div
           className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full text-3xl font-semibold"
-          style={{ background: "var(--accent)", color: "var(--accent-text-on)" }}
+          style={{
+            background: "var(--accent)",
+            color: "var(--accent-text-on)",
+          }}
         >
           N
         </div>
         <div className="flex-1">
           <div className={sectionLabelCls}>About</div>
-          <h2 className="mt-1 text-[22px] font-semibold t-text">{PROFILE.name}</h2>
+          <h2 className="mt-1 text-[22px] font-semibold t-text">
+            {PROFILE.name}
+          </h2>
           <p className="text-[14px] t-text-dim">
             {PROFILE.role} · {PROFILE.subtitle}
           </p>
@@ -88,22 +105,26 @@ export function AboutApp() {
             <BookOpen size={14} className="t-accent" /> What I'm focused on
           </h3>
           <p className="text-[13.5px] leading-relaxed t-text-dim">
-            I'm an Information Technology student focused on becoming a strong software
-            engineer. My current work centers on backend development, APIs, databases and
-            practical software engineering with{" "}
-            <span className="t-text">Python, Django, C#/.NET, React, SQL, Linux and Docker</span>.
+            I'm an Information Technology student focused on becoming a strong
+            software engineer. My current work centers on backend development,
+            APIs, databases and practical software engineering with{" "}
+            <span className="t-text">
+              Python, Django, C#/.NET, React, SQL, Linux and Docker
+            </span>
+            .
           </p>
         </div>
 
         <div className={cardCls}>
           <h3 className="mb-2 flex items-center gap-2 text-[14px] font-semibold t-text">
-            <Sparkles size={14} className="t-mauve" /> The longer arc
+            <Layers size={14} className="t-mauve" /> The longer arc
           </h3>
           <p className="text-[13.5px] leading-relaxed t-text-dim">
-            Alongside software engineering, I have a growing systems foundation in Linux,
-            Bash, Docker, networking and CI workflows. My long-term technical passion is
-            low-level security — understanding operating systems, memory, binaries and how
-            software works beneath the abstraction layer.
+            Alongside software engineering, I have a growing systems foundation
+            in Linux, Bash, Docker, networking and CI workflows. My long-term
+            technical passion is low-level security — understanding operating
+            systems, memory, binaries and how software works beneath the
+            abstraction layer.
           </p>
         </div>
       </div>
@@ -113,11 +134,27 @@ export function AboutApp() {
           <Target size={14} className="t-yellow" /> Five qualities I bring
         </h3>
         <div className="grid grid-cols-1 gap-3 text-[13.5px] t-text-dim md:grid-cols-2">
-          <div><span className="font-medium t-text">Engineer</span> — likes building real software.</div>
-          <div><span className="font-medium t-text">Curious</span> — wants to know how things actually work.</div>
-          <div><span className="font-medium t-text">Systems-minded</span> — sees beyond app code into Linux, networking and OS.</div>
-          <div><span className="font-medium t-text">Security-conscious</span> — thinks about auth, validation and failure modes.</div>
-          <div className="md:col-span-2"><span className="font-medium t-text">Long-term learner</span> — understands excellence takes years and is deliberately building fundamentals.</div>
+          <div>
+            <span className="font-medium t-text">Engineer</span> — likes
+            building real software.
+          </div>
+          <div>
+            <span className="font-medium t-text">Curious</span> — wants to know
+            how things actually work.
+          </div>
+          <div>
+            <span className="font-medium t-text">Systems-minded</span> — sees
+            beyond app code into Linux, networking and OS.
+          </div>
+          <div>
+            <span className="font-medium t-text">Security-conscious</span> —
+            thinks about auth, validation and failure modes.
+          </div>
+          <div className="md:col-span-2">
+            <span className="font-medium t-text">Long-term learner</span> —
+            understands excellence takes years and is deliberately building
+            fundamentals.
+          </div>
         </div>
       </div>
 
@@ -127,8 +164,14 @@ export function AboutApp() {
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 rounded-md border t-border-strong t-bg-2 px-3.5 py-2 text-[12.5px] t-text transition-theme hover:t-accent-border"
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--accent-border)", e.currentTarget.style.color = "var(--accent)")}
-          onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border-strong)", e.currentTarget.style.color = "var(--text)")}
+          onMouseEnter={(e) => (
+            (e.currentTarget.style.borderColor = "var(--accent-border)"),
+            (e.currentTarget.style.color = "var(--accent)")
+          )}
+          onMouseLeave={(e) => (
+            (e.currentTarget.style.borderColor = "var(--border-strong)"),
+            (e.currentTarget.style.color = "var(--text)")
+          )}
         >
           <Github size={13} /> GitHub
         </a>
@@ -137,8 +180,14 @@ export function AboutApp() {
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 rounded-md border t-border-strong t-bg-2 px-3.5 py-2 text-[12.5px] t-text transition-theme"
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--blue)", e.currentTarget.style.color = "var(--blue)")}
-          onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border-strong)", e.currentTarget.style.color = "var(--text)")}
+          onMouseEnter={(e) => (
+            (e.currentTarget.style.borderColor = "var(--blue)"),
+            (e.currentTarget.style.color = "var(--blue)")
+          )}
+          onMouseLeave={(e) => (
+            (e.currentTarget.style.borderColor = "var(--border-strong)"),
+            (e.currentTarget.style.color = "var(--text)")
+          )}
         >
           <ExternalLink size={13} /> LinkedIn
         </a>
@@ -152,15 +201,21 @@ export function ExperienceApp() {
   return (
     <div className="p-7 transition-theme">
       <div className={sectionLabelCls}>Professional Experience</div>
-      <h2 className="mt-1 text-[22px] font-semibold t-text">Where I've worked</h2>
+      <h2 className="mt-1 text-[22px] font-semibold t-text">
+        Where I've worked
+      </h2>
       <p className="mt-1 text-[14px] t-text-dim">
-        Building real software, learning production engineering, contributing to teams.
+        Building real software, learning production engineering, contributing to
+        teams.
       </p>
 
       <div className="mt-6 space-y-3">
         <div
           className="rounded-xl border p-5 transition-theme"
-          style={{ borderColor: "var(--accent-border)", background: "var(--bg-1)" }}
+          style={{
+            borderColor: "var(--accent-border)",
+            background: "var(--bg-1)",
+          }}
         >
           <div className="flex items-start justify-between gap-3">
             <div>
@@ -168,7 +223,9 @@ export function ExperienceApp() {
                 <Briefcase size={15} className="t-accent" />
                 Software Engineering Intern
               </div>
-              <div className="text-[12.5px] t-text-dim">Adroit 360 · Industry placement</div>
+              <div className="text-[12.5px] t-text-dim">
+                Adroit 360 · Industry placement
+              </div>
             </div>
             <span
               className="rounded-full px-2.5 py-0.5 font-mono text-[10.5px] t-accent"
@@ -178,14 +235,19 @@ export function ExperienceApp() {
             </span>
           </div>
           <p className="mt-3 text-[13.5px] leading-relaxed t-text">
-            Nathaniel gained practical software engineering experience in an industry
-            environment at <span className="font-medium t-accent">Adroit 360</span>,
-            complementing his academic studies and personal engineering projects.
+            Nathaniel gained practical software engineering experience in an
+            industry environment at{" "}
+            <span className="font-medium t-accent">Adroit 360</span>,
+            complementing his academic studies and personal engineering
+            projects.
           </p>
           <p className="mt-2 text-[12.5px] leading-relaxed t-text-dim">
-            <em>Specific responsibilities, technologies and projects at Adroit 360 will be
-            expanded here once those details are confirmed. The portfolio will be updated
-            rather than the experience being left generic.</em>
+            <em>
+              Specific responsibilities, technologies and projects at Adroit 360
+              will be expanded here once those details are confirmed. The
+              portfolio will be updated rather than the experience being left
+              generic.
+            </em>
           </p>
         </div>
 
@@ -196,7 +258,9 @@ export function ExperienceApp() {
                 <Code2 size={15} className="t-blue" />
                 Independent Engineering Projects
               </div>
-              <div className="text-[12.5px] t-text-dim">Self-directed · Open source</div>
+              <div className="text-[12.5px] t-text-dim">
+                Self-directed · Open source
+              </div>
             </div>
             <span
               className="rounded-full px-2.5 py-0.5 font-mono text-[10.5px] t-blue"
@@ -206,8 +270,10 @@ export function ExperienceApp() {
             </span>
           </div>
           <p className="mt-3 text-[13.5px] leading-relaxed t-text-dim">
-            Selected full-stack, backend, systems and security-leaning projects built on
-            personal time. See the <span className="font-medium t-accent">Engineering Projects</span> window for the curated set.
+            Selected full-stack, backend, systems and security-leaning projects
+            built on personal time. See the{" "}
+            <span className="font-medium t-accent">Engineering Projects</span>{" "}
+            window for the curated set.
           </p>
         </div>
       </div>
@@ -242,15 +308,17 @@ const CATS: { id: ProjectCategory; label: string }[] = [
 
 export function ProjectsApp() {
   const [cat, setCat] = useState<ProjectCategory>("all");
-  const filtered = cat === "all" ? PROJECTS : PROJECTS.filter((p) => p.category === cat);
+  const filtered =
+    cat === "all" ? PROJECTS : PROJECTS.filter((p) => p.category === cat);
 
   return (
     <div className="p-7 transition-theme">
       <div className={sectionLabelCls}>Engineering Projects</div>
       <h2 className="mt-1 text-[22px] font-semibold t-text">Selected Work</h2>
       <p className="mt-1 text-[14px] t-text-dim">
-        Curated full-stack, backend, systems and security-leaning work. Not every GitHub
-        repository is featured; this is the quality over quantity set.
+        Curated full-stack, backend, systems and security-leaning work. Not
+        every GitHub repository is featured; this is the quality over quantity
+        set.
       </p>
 
       <div className="mt-4 flex flex-wrap gap-1.5">
@@ -287,12 +355,18 @@ export function ProjectsApp() {
             key={p.id}
             className="rounded-xl border t-border p-4 transition-theme"
             style={{ background: "var(--bg-1)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--accent-border)")}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.borderColor = "var(--accent-border)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.borderColor = "var(--border)")
+            }
           >
             <div className="flex items-start justify-between gap-2">
               <div>
-                <div className="text-[14.5px] font-semibold t-text">{p.name}</div>
+                <div className="text-[14.5px] font-semibold t-text">
+                  {p.name}
+                </div>
                 <div className="text-[12px] t-text-dim">{p.tagline}</div>
               </div>
               <span
@@ -399,7 +473,10 @@ export function PhilosophyApp() {
       <h2 className="mt-1 text-[22px] font-semibold t-text">How I work</h2>
       <div
         className="mt-3 rounded-lg border p-4"
-        style={{ borderColor: "var(--accent-border)", background: "var(--accent-soft)" }}
+        style={{
+          borderColor: "var(--accent-border)",
+          background: "var(--accent-soft)",
+        }}
       >
         <p className="text-[15px] font-medium t-text">
           "Build it. Understand it. Break it. Secure it. Improve it."
@@ -430,10 +507,12 @@ export function SystemsApp() {
   return (
     <div className="p-7 transition-theme">
       <div className={sectionLabelCls}>Systems & Linux</div>
-      <h2 className="mt-1 text-[22px] font-semibold t-text">Linux & Systems Foundation</h2>
+      <h2 className="mt-1 text-[22px] font-semibold t-text">
+        Linux & Systems Foundation
+      </h2>
       <p className="mt-1 text-[14px] t-text-dim">
-        The foundation beneath application code. Comfortable in the shell, learning the OS
-        from the inside out.
+        The foundation beneath application code. Comfortable in the shell,
+        learning the OS from the inside out.
       </p>
 
       <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3">
@@ -446,7 +525,11 @@ export function SystemsApp() {
           { name: "Docker", desc: "Containerization fundamentals" },
           { name: "Networking", desc: "IPv4, VLSM, fundamentals" },
         ].map((s) => (
-          <div key={s.name} className="rounded-lg border t-border p-3" style={{ background: "var(--bg-1)" }}>
+          <div
+            key={s.name}
+            className="rounded-lg border t-border p-3"
+            style={{ background: "var(--bg-1)" }}
+          >
             <div className="text-[13.5px] font-semibold t-text">{s.name}</div>
             <div className="text-[11.5px] t-text-dim">{s.desc}</div>
           </div>
@@ -460,9 +543,9 @@ export function SystemsApp() {
         <p className="mt-2 text-[13px] leading-relaxed t-text-dim">
           Completed hands-on Linux-focused security training through{" "}
           <span className="font-medium t-accent">pwn.college</span> — filesystem
-          operations, permissions, processes, shell environments, command-line problem
-          solving and Linux system interaction. A hands-on foundation, not a claim of
-          expertise.
+          operations, permissions, processes, shell environments, command-line
+          problem solving and Linux system interaction. A hands-on foundation,
+          not a claim of expertise.
         </p>
       </div>
     </div>
@@ -474,20 +557,22 @@ export function SecurityApp() {
   return (
     <div className="p-7 transition-theme">
       <div className={sectionLabelCls}>Long-term Passion</div>
-      <h2 className="mt-1 text-[22px] font-semibold t-text">Beyond the Abstraction Layer</h2>
+      <h2 className="mt-1 text-[22px] font-semibold t-text">
+        Beyond the Abstraction Layer
+      </h2>
       <p className="mt-3 text-[13.5px] leading-relaxed t-text-dim">
-        Software engineering is my career path. Understanding what happens underneath
-        software is my obsession.
+        Software engineering is my career path. Understanding what happens
+        underneath software is my obsession.
       </p>
       <p className="mt-2 text-[13.5px] leading-relaxed t-text-dim">
-        I'm gradually exploring the lower layers of computing — Linux internals, memory,
-        operating systems, computer architecture, assembly, reverse engineering and
-        vulnerability research.
+        I'm gradually exploring the lower layers of computing — Linux internals,
+        memory, operating systems, computer architecture, assembly, reverse
+        engineering and vulnerability research.
       </p>
       <p className="mt-2 text-[13.5px] leading-relaxed t-text-dim">
-        This is a long-term specialization, not something I'm pretending to have mastered
-        today. I'm building the foundations first: programming, computer science, Linux
-        and systems knowledge.
+        This is a long-term specialization, not something I'm pretending to have
+        mastered today. I'm building the foundations first: programming,
+        computer science, Linux and systems knowledge.
       </p>
 
       <div className="mt-6 grid grid-cols-2 gap-2 md:grid-cols-3">
@@ -520,7 +605,9 @@ export function RoadmapApp() {
   return (
     <div className="p-7 transition-theme">
       <div className={sectionLabelCls}>Learning Roadmap</div>
-      <h2 className="mt-1 text-[22px] font-semibold t-text">Long-term Learning Direction</h2>
+      <h2 className="mt-1 text-[22px] font-semibold t-text">
+        Long-term Learning Direction
+      </h2>
       <p className="mt-1 text-[14px] t-text-dim">
         A coherent development plan — not a list of buzzwords.
       </p>
@@ -535,9 +622,13 @@ export function RoadmapApp() {
               >
                 {r.phase}
               </span>
-              <span className="font-mono text-[10.5px] t-text-faint">step {i + 1}</span>
+              <span className="font-mono text-[10.5px] t-text-faint">
+                step {i + 1}
+              </span>
             </div>
-            <div className="mt-2 text-[14px] font-semibold t-text">{r.title}</div>
+            <div className="mt-2 text-[14px] font-semibold t-text">
+              {r.title}
+            </div>
             <div className="mt-2.5 flex flex-wrap gap-1.5">
               {r.items.map((it) => (
                 <span
@@ -582,12 +673,15 @@ export function EducationApp() {
           </span>
         </div>
         <p className="mt-3 text-[13px] leading-relaxed t-text-dim">
-          Relevant areas of study include programming, software development, databases,
-          networking, systems, cybersecurity and information technology.
+          Relevant areas of study include programming, software development,
+          databases, networking, systems, cybersecurity and information
+          technology.
         </p>
       </div>
 
-      <h3 className="mt-7 text-[14px] font-semibold t-text">Certifications & Training</h3>
+      <h3 className="mt-7 text-[14px] font-semibold t-text">
+        Certifications & Training
+      </h3>
       <div className="mt-3 space-y-2">
         {CERTS.map((c) => (
           <div
@@ -612,35 +706,41 @@ export function GoalsApp() {
   return (
     <div className="p-7 transition-theme">
       <div className={sectionLabelCls}>Career Goals</div>
-      <h2 className="mt-1 text-[22px] font-semibold t-text">What I'm looking for</h2>
+      <h2 className="mt-1 text-[22px] font-semibold t-text">
+        What I'm looking for
+      </h2>
       <p className="mt-3 text-[13.5px] leading-relaxed t-text">
         I'm currently looking for opportunities to grow as a software engineer —
         particularly{" "}
         <span className="font-medium t-accent">
-          junior software engineering, backend engineering, and software engineering
-          internship
+          junior software engineering, backend engineering, and software
+          engineering internship
         </span>{" "}
         roles.
       </p>
       <p className="mt-2 text-[13.5px] leading-relaxed t-text-dim">
-        My immediate goal is to contribute to real-world software, learn from experienced
-        engineers, understand production systems and develop strong engineering habits.
+        My immediate goal is to contribute to real-world software, learn from
+        experienced engineers, understand production systems and develop strong
+        engineering habits.
       </p>
       <p className="mt-2 text-[13.5px] leading-relaxed t-text-dim">
-        Long term, I want to combine strong software engineering fundamentals with my
-        passion for systems and low-level security.
+        Long term, I want to combine strong software engineering fundamentals
+        with my passion for systems and low-level security.
       </p>
 
       <div
         className="mt-6 rounded-lg border p-4"
-        style={{ borderColor: "var(--accent-border)", background: "var(--accent-soft)" }}
+        style={{
+          borderColor: "var(--accent-border)",
+          background: "var(--accent-soft)",
+        }}
       >
         <div className="font-mono text-[10.5px] uppercase tracking-wider t-accent">
           Ideal Role
         </div>
         <div className="mt-2 text-[13.5px] font-medium t-text">
-          Junior Software Engineer · Backend Engineer · Software Engineering Intern ·
-          Graduate Software Engineer
+          Junior Software Engineer · Backend Engineer · Software Engineering
+          Intern · Graduate Software Engineer
         </div>
       </div>
 
@@ -654,7 +754,8 @@ export function GoalsApp() {
         <div className={cardCls}>
           <div className="text-[14px] font-semibold t-text">Long-term</div>
           <p className="mt-1 text-[13px] t-text-dim">
-            Software engineering fundamentals combined with systems and low-level security.
+            Software engineering fundamentals combined with systems and
+            low-level security.
           </p>
         </div>
       </div>
@@ -667,19 +768,26 @@ export function GithubApp() {
   return (
     <div className="p-7 transition-theme">
       <div className={sectionLabelCls}>GitHub</div>
-      <h2 className="mt-1 text-[22px] font-semibold t-text">More experiments, more code</h2>
+      <h2 className="mt-1 text-[22px] font-semibold t-text">
+        More experiments, more code
+      </h2>
       <p className="mt-2 text-[13.5px] leading-relaxed t-text-dim">
-        My GitHub contains projects, experiments, learning exercises and ongoing technical
-        work. Not everything is production-ready — some repositories document the process
-        of learning a technology from first principles.
+        My GitHub contains projects, experiments, learning exercises and ongoing
+        technical work. Not everything is production-ready — some repositories
+        document the process of learning a technology from first principles.
       </p>
       <a
         href={PROFILE.github}
         target="_blank"
         rel="noreferrer"
         className="mt-4 inline-flex items-center gap-2 rounded-md border px-4 py-2 text-[13px] font-medium t-accent transition-theme"
-        style={{ borderColor: "var(--accent)", background: "var(--accent-soft)" }}
-        onMouseEnter={(e) => (e.currentTarget.style.filter = "brightness(1.08)")}
+        style={{
+          borderColor: "var(--accent)",
+          background: "var(--accent-soft)",
+        }}
+        onMouseEnter={(e) =>
+          (e.currentTarget.style.filter = "brightness(1.08)")
+        }
         onMouseLeave={(e) => (e.currentTarget.style.filter = "")}
       >
         <Github size={13} /> Explore GitHub →
@@ -687,16 +795,44 @@ export function GithubApp() {
 
       <div className="mt-6 space-y-2">
         {[
-          { name: "Domain-Guard", desc: "Full-stack Django + React", lang: "Python" },
-          { name: "med-ocr", desc: "OCR-based pharmaceutical app", lang: "JavaScript" },
-          { name: "password-vault", desc: "Auth-focused exploration", lang: "Python" },
+          {
+            name: "Domain-Guard",
+            desc: "Full-stack Django + React",
+            lang: "Python",
+          },
+          {
+            name: "med-ocr",
+            desc: "OCR-based pharmaceutical app",
+            lang: "JavaScript",
+          },
+          {
+            name: "password-vault",
+            desc: "Auth-focused exploration",
+            lang: "Python",
+          },
           { name: "pHarMa", desc: "OCR / Supabase", lang: "JavaScript" },
           { name: "Moorhead", desc: "C# / .NET inventory CLI", lang: "C#" },
-          { name: "Weatherapp", desc: "Async weather frontend", lang: "JavaScript" },
+          {
+            name: "Weatherapp",
+            desc: "Async weather frontend",
+            lang: "JavaScript",
+          },
           { name: "Hello-Nat", desc: "HTML/CSS + Docker", lang: "HTML" },
-          { name: "first-docker-image", desc: "Dockerized todo", lang: "JavaScript" },
-          { name: "Django-first-crud", desc: "Django CRUD exploration", lang: "Python" },
-          { name: "linux-luminarium", desc: "pwn.college exercises", lang: "Shell" },
+          {
+            name: "first-docker-image",
+            desc: "Dockerized todo",
+            lang: "JavaScript",
+          },
+          {
+            name: "Django-first-crud",
+            desc: "Django CRUD exploration",
+            lang: "Python",
+          },
+          {
+            name: "linux-luminarium",
+            desc: "pwn.college exercises",
+            lang: "Shell",
+          },
           { name: "flow-3.0", desc: "JavaScript project", lang: "JavaScript" },
           { name: "portfolio", desc: "This site", lang: "HTML" },
         ].map((r) => (
@@ -707,11 +843,17 @@ export function GithubApp() {
             rel="noreferrer"
             className="flex items-center justify-between rounded-md border t-border px-3 py-2 transition-theme"
             style={{ background: "var(--bg-1)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--accent-border)")}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.borderColor = "var(--accent-border)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.borderColor = "var(--border)")
+            }
           >
             <div>
-              <div className="font-mono text-[13px] font-medium t-text">{r.name}</div>
+              <div className="font-mono text-[13px] font-medium t-text">
+                {r.name}
+              </div>
               <div className="text-[11.5px] t-text-dim">{r.desc}</div>
             </div>
             <span
@@ -732,10 +874,13 @@ export function ContactApp() {
   return (
     <div className="p-7 transition-theme">
       <div className={sectionLabelCls}>Contact</div>
-      <h2 className="mt-1 text-[22px] font-semibold t-text">Have a problem worth building?</h2>
+      <h2 className="mt-1 text-[22px] font-semibold t-text">
+        Have a problem worth building?
+      </h2>
       <p className="mt-3 text-[13.5px] leading-relaxed t-text-dim">
-        I'm currently open to software engineering internships, junior engineering
-        opportunities, and collaborations that help me grow through real-world engineering.
+        I'm currently open to software engineering internships, junior
+        engineering opportunities, and collaborations that help me grow through
+        real-world engineering.
       </p>
 
       <div className="mt-6 space-y-2">
@@ -745,12 +890,18 @@ export function ContactApp() {
           rel="noreferrer"
           className="flex items-center justify-between rounded-lg border t-border px-4 py-3 transition-theme"
           style={{ background: "var(--bg-1)" }}
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--accent-border)")}
-          onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.borderColor = "var(--accent-border)")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.borderColor = "var(--border)")
+          }
         >
           <div>
             <div className="text-[11.5px] t-text-dim">GitHub</div>
-            <div className="font-mono text-[13.5px] t-text">github.com/Nathaniel-saint</div>
+            <div className="font-mono text-[13.5px] t-text">
+              github.com/Nathaniel-saint
+            </div>
           </div>
           <Github size={16} className="t-accent" />
         </a>
@@ -760,12 +911,18 @@ export function ContactApp() {
           rel="noreferrer"
           className="flex items-center justify-between rounded-lg border t-border px-4 py-3 transition-theme"
           style={{ background: "var(--bg-1)" }}
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--blue)")}
-          onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.borderColor = "var(--blue)")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.borderColor = "var(--border)")
+          }
         >
           <div>
             <div className="text-[11.5px] t-text-dim">LinkedIn</div>
-            <div className="font-mono text-[13.5px] t-text">nathaniel-addae-marfo</div>
+            <div className="font-mono text-[13.5px] t-text">
+              nathaniel-addae-marfo
+            </div>
           </div>
           <ExternalLink size={16} className="t-blue" />
         </a>
@@ -779,21 +936,118 @@ export function ContactApp() {
 }
 
 // =================== FILES ===================
-export function FilesApp({ onOpen }: { onOpen: (id: any, title: string) => void }) {
-  const items: { name: string; type: "folder" | "file"; size?: string; app: any; title: string; emoji: string }[] = [
-    { name: "About", type: "file", size: "1.2K", app: "about", title: "about.txt", emoji: "📄" },
-    { name: "Experience", type: "folder", app: "experience", title: "Professional Experience", emoji: "💼" },
-    { name: "Projects", type: "folder", app: "projects", title: "Selected Engineering Projects", emoji: "📁" },
-    { name: "Stack", type: "file", size: "0.8K", app: "skills", title: "Technical Stack", emoji: "🛠️" },
-    { name: "Philosophy", type: "file", size: "0.6K", app: "philosophy", title: "Engineering Philosophy", emoji: "📜" },
-    { name: "Systems", type: "folder", app: "systems", title: "Systems & Linux", emoji: "🖥️" },
-    { name: "Low-Level", type: "folder", app: "security", title: "Beyond the Abstraction Layer", emoji: "🔒" },
-    { name: "Roadmap", type: "file", size: "0.5K", app: "roadmap", title: "Learning Roadmap", emoji: "🗺️" },
-    { name: "Education", type: "folder", app: "education", title: "Education & Training", emoji: "🎓" },
-    { name: "Goals", type: "file", size: "0.4K", app: "goals", title: "Career Goals", emoji: "🎯" },
-    { name: "GitHub", type: "file", size: "2.1K", app: "github", title: "GitHub Repositories", emoji: "🔗" },
-    { name: "Contact", type: "file", size: "0.3K", app: "contact", title: "Contact", emoji: "✉️" },
-    { name: "Terminal", type: "file", size: "—", app: "terminal", title: "Terminal", emoji: "⌨️" },
+export function FilesApp({
+  onOpen,
+}: {
+  onOpen: (id: any, title: string) => void;
+}) {
+  const items: {
+    name: string;
+    type: "folder" | "file";
+    size?: string;
+    app: any;
+    title: string;
+    emoji: string;
+  }[] = [
+    {
+      name: "About",
+      type: "file",
+      size: "1.2K",
+      app: "about",
+      title: "about.txt",
+      emoji: "📄",
+    },
+    {
+      name: "Experience",
+      type: "folder",
+      app: "experience",
+      title: "Professional Experience",
+      emoji: "💼",
+    },
+    {
+      name: "Projects",
+      type: "folder",
+      app: "projects",
+      title: "Selected Engineering Projects",
+      emoji: "📁",
+    },
+    {
+      name: "Stack",
+      type: "file",
+      size: "0.8K",
+      app: "skills",
+      title: "Technical Stack",
+      emoji: "🛠️",
+    },
+    {
+      name: "Philosophy",
+      type: "file",
+      size: "0.6K",
+      app: "philosophy",
+      title: "Engineering Philosophy",
+      emoji: "📜",
+    },
+    {
+      name: "Systems",
+      type: "folder",
+      app: "systems",
+      title: "Systems & Linux",
+      emoji: "🖥️",
+    },
+    {
+      name: "Low-Level",
+      type: "folder",
+      app: "security",
+      title: "Beyond the Abstraction Layer",
+      emoji: "🔒",
+    },
+    {
+      name: "Roadmap",
+      type: "file",
+      size: "0.5K",
+      app: "roadmap",
+      title: "Learning Roadmap",
+      emoji: "🗺️",
+    },
+    {
+      name: "Education",
+      type: "folder",
+      app: "education",
+      title: "Education & Training",
+      emoji: "🎓",
+    },
+    {
+      name: "Goals",
+      type: "file",
+      size: "0.4K",
+      app: "goals",
+      title: "Career Goals",
+      emoji: "🎯",
+    },
+    {
+      name: "GitHub",
+      type: "file",
+      size: "2.1K",
+      app: "github",
+      title: "GitHub Repositories",
+      emoji: "🔗",
+    },
+    {
+      name: "Contact",
+      type: "file",
+      size: "0.3K",
+      app: "contact",
+      title: "Contact",
+      emoji: "✉️",
+    },
+    {
+      name: "Terminal",
+      type: "file",
+      size: "—",
+      app: "terminal",
+      title: "Terminal",
+      emoji: "⌨️",
+    },
   ];
 
   return (
@@ -803,7 +1057,9 @@ export function FilesApp({ onOpen }: { onOpen: (id: any, title: string) => void 
         style={{ background: "var(--bg-2)", borderColor: "var(--border)" }}
       >
         <span className="font-mono">/home/nathaniel/portfolio</span>
-        <span className="ml-auto font-mono text-[11px] t-text-faint">{items.length} items</span>
+        <span className="ml-auto font-mono text-[11px] t-text-faint">
+          {items.length} items
+        </span>
       </div>
       <div className="flex-1 overflow-auto gui-scroll p-4">
         <div className="grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-5">
@@ -812,14 +1068,20 @@ export function FilesApp({ onOpen }: { onOpen: (id: any, title: string) => void 
               key={it.name}
               onDoubleClick={() => onOpen(it.app, it.title)}
               className="group flex flex-col items-center gap-1.5 rounded-md p-2 text-center transition-theme"
-              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--hover)")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "var(--hover)")
+              }
               onMouseLeave={(e) => (e.currentTarget.style.background = "")}
               title={`Open ${it.name}`}
             >
               <div className="text-3xl">{it.emoji}</div>
-              <div className="line-clamp-1 max-w-[7rem] text-[12px] t-text">{it.name}</div>
+              <div className="line-clamp-1 max-w-[7rem] text-[12px] t-text">
+                {it.name}
+              </div>
               {it.size && (
-                <div className="font-mono text-[10.5px] t-text-faint">{it.size}</div>
+                <div className="font-mono text-[10.5px] t-text-faint">
+                  {it.size}
+                </div>
               )}
             </button>
           ))}
@@ -847,7 +1109,7 @@ export function ResumeApp() {
       >
         <div className="t-accent">$ cat resume.txt</div>
         <pre className="mt-3 whitespace-pre-wrap t-text">
-{`─────────────────────────────────────────────────────
+          {`─────────────────────────────────────────────────────
   NATHANIEL ADDAE MARFO
   Software Engineer in the Making · Systems Thinker
   Ghana · ${PROFILE.handle}
@@ -892,7 +1154,6 @@ CERTIFICATIONS
   ▸ Educ8africa — Cybersecurity Essentials
   ▸ Educ8africa — CyberRookie 7.0
   ▸ pwn.college — Linux Luminarium
-  ▸ Cisco — Intro to Cybersecurity (in progress)
 
 GOAL
   Get employed as a Software Engineer and turn

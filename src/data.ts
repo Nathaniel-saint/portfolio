@@ -15,7 +15,12 @@ export type AppId =
   | "contact"
   | "files";
 
-export type ProjectCategory = "all" | "engineering" | "backend" | "systems" | "security";
+export type ProjectCategory =
+  | "all"
+  | "engineering"
+  | "backend"
+  | "systems"
+  | "security";
 
 export interface Project {
   id: string;
@@ -187,7 +192,8 @@ export const PROFILE = {
   subtitle: "Systems Thinker by Nature",
   location: "Ghana",
   status: "Open to opportunities",
-  education: "Palm University College — B.Sc. Information Technology (Junior Year)",
+  education:
+    "Palm University College — B.Sc. Information Technology (Junior Year)",
   email: "", // intentionally blank per brief — no fabricated email
   github: "https://github.com/Nathaniel-saint",
   linkedin: "https://www.linkedin.com/in/nathaniel-addae-marfo-24348a348",
@@ -197,7 +203,16 @@ export const SKILL_GROUPS = [
   {
     title: "Backend",
     icon: "server",
-    items: ["Python", "Django", "Django REST Framework", "REST APIs", "Authentication", "Authorization", "CRUD", "Data validation"],
+    items: [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "REST APIs",
+      "Authentication",
+      "Authorization",
+      "CRUD",
+      "Data validation",
+    ],
   },
   {
     title: "Languages & Secondary",
@@ -212,33 +227,86 @@ export const SKILL_GROUPS = [
   {
     title: "Data",
     icon: "database",
-    items: ["SQL", "Relational design", "SQLite", "CSV persistence", "Data integrity"],
+    items: [
+      "SQL",
+      "Relational design",
+      "SQLite",
+      "CSV persistence",
+      "Data integrity",
+    ],
   },
   {
     title: "Systems & DevOps",
     icon: "terminal",
-    items: ["Linux (Ubuntu, Kali)", "Bash", "Git", "GitHub", "GitHub Actions", "CI workflows", "Docker", "Networking (IPv4 / VLSM)"],
+    items: [
+      "Linux (Ubuntu, Kali)",
+      "Bash",
+      "Git",
+      "GitHub",
+      "GitHub Actions",
+      "CI workflows",
+      "Docker",
+      "Networking (IPv4 / VLSM)",
+    ],
   },
   {
     title: "Security Awareness",
     icon: "shield",
-    items: ["Defensive programming", "Input validation", "Web security fundamentals", "Vulnerability assessment", "XSS / SQLi fundamentals", "Linux security fundamentals"],
+    items: [
+      "Defensive programming",
+      "Input validation",
+      "Web security fundamentals",
+      "Vulnerability assessment",
+      "XSS / SQLi fundamentals",
+      "Linux security fundamentals",
+    ],
   },
 ];
 
 export const PHILOSOPHY = [
   { key: "Build", desc: "Turn ideas into working software." },
-  { key: "Understand", desc: "Learn the technologies underneath the abstraction." },
+  {
+    key: "Understand",
+    desc: "Learn the technologies underneath the abstraction.",
+  },
   { key: "Break", desc: "Test assumptions and find weaknesses." },
   { key: "Secure", desc: "Think about failure and attack surfaces." },
   { key: "Improve", desc: "Refactor, test, document, deploy better versions." },
 ];
 
 export const ROADMAP = [
-  { phase: "NOW", title: "Software Engineering", items: ["Python", "Django", "DRF", "SQL", "C# / .NET", "Testing"] },
-  { phase: "NEXT", title: "Systems & DevOps", items: ["Linux", "Docker", "CI/CD", "Networking", "Deployment"] },
-  { phase: "FOUNDATIONS", title: "Computer Science", items: ["C", "Memory", "Algorithms", "Data structures", "Computer architecture"] },
-  { phase: "LONG-TERM", title: "Low-Level Security", items: ["Assembly", "Operating systems", "Reverse engineering", "Binary exploitation", "Vulnerability research"] },
+  {
+    phase: "NOW",
+    title: "Software Engineering",
+    items: ["Python", "Django", "DRF", "SQL", "C# / .NET", "Testing"],
+  },
+  {
+    phase: "NEXT",
+    title: "Systems & DevOps",
+    items: ["Linux", "Docker", "CI/CD", "Networking", "Deployment"],
+  },
+  {
+    phase: "FOUNDATIONS",
+    title: "Computer Science",
+    items: [
+      "C",
+      "Memory",
+      "Algorithms",
+      "Data structures",
+      "Computer architecture",
+    ],
+  },
+  {
+    phase: "LONG-TERM",
+    title: "Low-Level Security",
+    items: [
+      "Assembly",
+      "Operating systems",
+      "Reverse engineering",
+      "Binary exploitation",
+      "Vulnerability research",
+    ],
+  },
 ];
 
 export const CERTS = [
@@ -246,13 +314,32 @@ export const CERTS = [
   { org: "Grow with Educ8africa", name: "Cybersecurity Essentials" },
   { org: "Grow with Educ8africa", name: "CyberRookie 7.0" },
   { org: "pwn.college", name: "Linux Luminarium — Completed" },
-  { org: "Cisco", name: "Introduction to Cybersecurity (In Progress)" },
 ];
 
 export const TIMELINE = [
-  { date: "Now", title: "Information Technology Student", org: "Palm University College" },
-  { date: "Building", title: "Selected Engineering Projects", org: "Domain-Guard · med-ocr · Moorhead · pHarMa" },
-  { date: "Training", title: "pwn.college — Linux Luminarium", org: "Hands-on Linux foundations" },
-  { date: "Foundation", title: "Backend & Full-Stack Development", org: "Django · DRF · React · C#/.NET" },
-  { date: "Long-term", title: "Low-Level Security", org: "C · Memory · OS · Assembly · RE" },
+  {
+    date: "Now",
+    title: "Information Technology Student",
+    org: "Palm University College",
+  },
+  {
+    date: "Building",
+    title: "Selected Engineering Projects",
+    org: "Domain-Guard · med-ocr · Moorhead · pHarMa",
+  },
+  {
+    date: "Training",
+    title: "pwn.college — Linux Luminarium",
+    org: "Hands-on Linux foundations",
+  },
+  {
+    date: "Foundation",
+    title: "Backend & Full-Stack Development",
+    org: "Django · DRF · React · C#/.NET",
+  },
+  {
+    date: "Long-term",
+    title: "Low-Level Security",
+    org: "C · Memory · OS · Assembly · RE",
+  },
 ];
