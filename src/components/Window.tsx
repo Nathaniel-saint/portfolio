@@ -27,20 +27,40 @@ export function Window({
   mobile = false,
   children,
 }: Props) {
-  const dragRef = useRef<{ ox: number; oy: number; x: number; y: number } | null>(null);
-  const resizeRef = useRef<{ ox: number; oy: number; ow: number; oh: number } | null>(null);
+  const dragRef = useRef<{
+    ox: number;
+    oy: number;
+    x: number;
+    y: number;
+  } | null>(null);
+  const resizeRef = useRef<{
+    ox: number;
+    oy: number;
+    ow: number;
+    oh: number;
+  } | null>(null);
   const winRef = useRef<HTMLDivElement | null>(null);
 
   // Clamp to viewport (desktop only)
   useEffect(() => {
     if (mobile || state.maximized) return;
     const vw = window.innerWidth;
-    const vh = window.innerHeight - 32;
+    const vh = window.innerHeight - 64;
     if (state.x < 0) onMove(state.id, 0, state.y);
     if (state.y < 32) onMove(state.id, state.x, 32);
     if (state.x + state.width > vw) onMove(state.id, vw - state.width, state.y);
-    if (state.y + state.height > vh) onMove(state.id, state.x, vh - state.height);
-  }, [state.x, state.y, state.width, state.height, state.id, state.maximized, mobile, onMove]);
+    if (state.y + state.height > vh)
+      onMove(state.id, state.x, vh - state.height);
+  }, [
+    state.x,
+    state.y,
+    state.width,
+    state.height,
+    state.id,
+    state.maximized,
+    mobile,
+    onMove,
+  ]);
 
   const startDrag = (e: React.MouseEvent) => {
     if (mobile || state.maximized) return;
@@ -59,7 +79,7 @@ export function Window({
       let nx = dragRef.current.x + dx;
       let ny = dragRef.current.y + dy;
       const vw = window.innerWidth;
-      const vh = window.innerHeight - 32;
+      const vh = window.innerHeight - 64;
       nx = Math.max(-state.width + 120, Math.min(nx, vw - 40));
       ny = Math.max(32, Math.min(ny, vh - 40));
       onMove(state.id, nx, ny);
@@ -82,7 +102,12 @@ export function Window({
     e.stopPropagation();
     if (state.maximized) return;
     onFocus(state.id);
-    resizeRef.current = { ox: e.clientX, oy: e.clientY, ow: state.width, oh: state.height };
+    resizeRef.current = {
+      ox: e.clientX,
+      oy: e.clientY,
+      ow: state.width,
+      oh: state.height,
+    };
     document.body.style.userSelect = "none";
     document.body.style.cursor = "nwse-resize";
   };
@@ -139,7 +164,9 @@ export function Window({
             title="Back"
             className="flex h-10 w-10 items-center justify-center rounded-full transition-theme"
             style={{ color: "var(--accent)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "var(--hover)")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = "var(--hover)")
+            }
             onMouseLeave={(e) => (e.currentTarget.style.background = "")}
           >
             <ChevronLeft size={22} />
@@ -202,12 +229,20 @@ export function Window({
         }}
       >
         <div className="flex min-w-0 items-center gap-2.5 text-[13px]">
-          <span className="shrink-0 text-[15px] leading-none">{state.icon}</span>
-          <span className="truncate font-semibold tracking-tight" style={{ color: "var(--text)" }}>
+          <span className="shrink-0 text-[15px] leading-none">
+            {state.icon}
+          </span>
+          <span
+            className="truncate font-semibold tracking-tight"
+            style={{ color: "var(--text)" }}
+          >
             {state.title}
           </span>
         </div>
-        <div className="flex shrink-0 items-center gap-0.5" onMouseDown={(e) => e.stopPropagation()}>
+        <div
+          className="flex shrink-0 items-center gap-0.5"
+          onMouseDown={(e) => e.stopPropagation()}
+        >
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -271,7 +306,10 @@ export function Window({
         </div>
       </div>
       {/* Body — hidden overflow; each app handles its own scroll */}
-      <div className="relative min-h-0 flex-1 overflow-hidden" style={{ background: "var(--bg-0)" }}>
+      <div
+        className="relative min-h-0 flex-1 overflow-hidden"
+        style={{ background: "var(--bg-0)" }}
+      >
         {children}
       </div>
       {!state.maximized && (
@@ -280,8 +318,17 @@ export function Window({
           className="absolute bottom-0 right-0 h-4 w-4 cursor-nwse-resize"
           aria-label="Resize"
         >
-          <svg width="14" height="14" viewBox="0 0 14 14" className="absolute bottom-0.5 right-0.5 opacity-60">
-            <path d="M13 1L1 13M13 6L6 13M13 11L11 13" stroke="var(--resize-handle)" strokeWidth="1.2" />
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            className="absolute bottom-0.5 right-0.5 opacity-60"
+          >
+            <path
+              d="M13 1L1 13M13 6L6 13M13 11L11 13"
+              stroke="var(--resize-handle)"
+              strokeWidth="1.2"
+            />
           </svg>
         </div>
       )}
