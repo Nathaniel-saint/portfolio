@@ -72,7 +72,7 @@ export function TraditionalView({ onSwitchView }: TraditionalViewProps) {
           <button
             type="button"
             onClick={() => onSwitchView("desktop")}
-            className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-[12px] font-semibold transition-theme t-border t-text"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-md border px-3 py-2 text-[12px] font-semibold transition-theme t-border t-text"
             title="Switch to desktop view"
           >
             <Monitor size={14} /> Desktop View

@@ -157,7 +157,7 @@ export function TopBar({
             e.stopPropagation();
             onSwitchView();
           }}
-          className="hidden items-center gap-1.5 rounded px-2 py-0.5 text-[11px] transition-theme md:flex"
+          className="hidden cursor-pointer items-center gap-1.5 rounded px-2 py-0.5 text-[11px] transition-theme md:flex"
           style={{ color: "var(--text-dim)" }}
           title="Switch to traditional website view"
         >
