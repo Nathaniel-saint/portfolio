@@ -64,15 +64,11 @@ export function AboutApp() {
   return (
     <div className="p-7 transition-theme">
       <div className="flex items-start gap-5">
-        <div
-          className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full text-3xl font-semibold"
-          style={{
-            background: "var(--accent)",
-            color: "var(--accent-text-on)",
-          }}
-        >
-          N
-        </div>
+        <img
+          src="/profile_pic.jpg"
+          alt={PROFILE.name}
+          className="h-20 w-20 shrink-0 rounded-full object-cover object-center"
+        />
         <div className="flex-1">
           <div className={sectionLabelCls}>About</div>
           <h2 className="mt-1 text-[22px] font-semibold t-text">

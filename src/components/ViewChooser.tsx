@@ -14,9 +14,11 @@ export function ViewChooser({ onChoose }: ViewChooserProps) {
         <header className="mb-10 flex items-start justify-between gap-6">
           <div>
             <div className="mb-4 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] t-accent">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--accent)] text-sm font-bold text-white">
-                N
-              </span>
+              <img
+                src="/profile_pic.jpg"
+                alt={PROFILE.name}
+                className="h-9 w-9 rounded-full object-cover object-center"
+              />
               {PROFILE.handle} · {PROFILE.location}
             </div>
             <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight t-text sm:text-6xl">

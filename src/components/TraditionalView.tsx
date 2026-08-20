@@ -42,12 +42,11 @@ export function TraditionalView({ onSwitchView }: TraditionalViewProps) {
             href="#top"
             className="flex items-center gap-2 text-[13px] font-semibold t-text"
           >
-            <span
-              className="flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white"
-              style={{ background: "var(--accent)" }}
-            >
-              N
-            </span>
+            <img
+              src="/profile_pic.jpg"
+              alt={PROFILE.name}
+              className="h-8 w-8 rounded-full object-cover object-center"
+            />
             <span className="hidden sm:inline">Nathaniel Marfo</span>
           </a>
           <div className="hidden items-center gap-5 text-[12px] t-text-dim md:flex">
